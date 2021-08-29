@@ -98,16 +98,25 @@ body > .info {
 }
 
 .info .metadata .titleAndButton .title {
-    font-size: var(--font-medium);
+    font-size: var(--font-large);
+    margin-right: var(--side-padding);
+}
+
+.info .metadata .titleAndButton .title .clamp {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
-    margin-right: var(--side-padding);
 }
 
 .info .metadata .titleAndButton .moreBtn {
     height: 100%;
+    background-color: var(--white-color);
+    transition: transform 300ms ease-in-out;
+}
+
+.info .metadata .titleAndButton .moreBtn.clicked {
+    transform: rotate(180deg);
 }
 
 .info .views {
@@ -128,19 +137,22 @@ body > .info {
     flex-direction: column;
     align-items: center;
     font-size: var(--font-small);
+    background-color: var(--white-color);
     color: var(--grey-dark-color);
 }
+
 
 .info .actions .button i {
     margin: 0 auto;
     margin-bottom: calc(var(--side-padding) / 2);    
-    font-size: 20px;
+    font-size: var(--font-medium);
 }
 
 /* Channel Description */
 .info .channel{
     display: flex;
     justify-content: space-between;
+    height: 70px;
     border-top: 1px solid var(--grey-light-color);
     border-bottom: 1px solid var(--grey-light-color);
 }
@@ -178,6 +190,7 @@ body > .info {
 
 /* Up Next */
 .upNext {
+    margin-top: var(--side-padding);
     padding: 0 var(--side-padding);
 }
 
@@ -206,6 +219,7 @@ body > .info {
 }
 
 .upNext .item .moreBtn {
+    background-color: var(--white-color);
     height: 100%;
     flex: 1 1 5%;
 }
@@ -216,7 +230,7 @@ body > .info {
 }
 
 .upNext .item .info .title {
-    font-size: var(--font-small);
+    font-size: var(--font-medium);
 }
 
 .upNext .item .info .name,
@@ -225,10 +239,20 @@ body > .info {
     color: var(--grey-dark-color);
 }
 
+.infoAndUpNext .info {
+    flex: 1 1 50%;
+    padding: 0 var(--side-padding);
+}
+
+.infoAndUpNext .upNext {
+    flex: 1 1 50%;
+    padding: 0 var(--side-padding);
+}
+
 .infoAndUpNext {
     display: flex;
     flex-direction: column;
-    margin-left: var(--side-padding);
+    margin: var(--side-padding);
 }
 
 @media screen and (min-width : 768px) {
